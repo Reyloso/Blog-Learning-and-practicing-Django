@@ -1,0 +1,32 @@
+{% extends "core/base3.html" %}
+{% block contenido %}
+<div class="row">
+<header class="intro-header" style="background-image: url({{MEDIA_URL}}{{a.portada}});">
+      <div class="container" >
+        	
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="post-heading">
+                      <h1>{{a.titulo}}</h1>
+                      <h2 class="subheading">{{a.subtitulo}}</h2>
+                      <span class="meta"> Posteado por: {{a.autor}} - Categoria: {{a.seccion}} - Fecha de publicacion:</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    </header>
+      <article>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {{a.articulo|safe}}
+      <img  src="{{ MEDIA_URL }}{{a.portada}}">
+              </div>
+          </div>
+      </div>
+      </article>
+
+		</div>
+
+{% endblock %}

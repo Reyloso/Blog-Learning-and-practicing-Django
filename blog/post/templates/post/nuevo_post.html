@@ -1,0 +1,35 @@
+{% extends "core/base_admin.html" %}
+{% block contenido %}
+
+<div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                NUEVO POST
+                            </h2>
+                        </div>
+
+                        <div class="body">
+                          <form  action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                  <ul> <p class="post-meta"> Titulo </p></ul>
+                                  <ul>{{form_post.titulo}}</ul>
+                                  <ul> <p class="post-meta"> Subtitulo </p></ul>
+                                  <ul>{{form_post.subtitulo}}</ul>
+                                  <ul> <p class="post-meta"> Portada </p></ul>
+                                  <ul>{{ form_post.portada}}</ul>
+                                  <ul> <p class="post-meta"> Seccion </p></ul>
+                                  <ul>{{form_post.seccion}}</ul>
+                                  <ul> <p class="post-meta"> Contenido </p></ul>
+                                  <ul>{{form_post.articulo}}</ul>
+                                  <ul><input type="submit" name="name" class="btn btn-primary" value="Guardar">
+                                    <a href="{% url "lista" %}" class="btn btn-default navbar-btn">Cancelar</a>
+                                  </ul>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
